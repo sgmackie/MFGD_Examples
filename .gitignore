@@ -1,0 +1,15 @@
+#VSCode Setting
+.vscode/
+
+#Build files
+misc/
+project/code/build_mac.txt
+project/build
+
+#Visual Studio files
+*.pdb
+*.ilk
+project/build/libexp
+
+#Various
+OLD/
