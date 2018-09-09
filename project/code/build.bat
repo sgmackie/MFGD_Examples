@@ -10,7 +10,7 @@ if not exist %BuildDir% mkdir %BuildDir%
 pushd %BuildDir%
 
 :: Set compiler arguments
-set Files=..\..\project\code\win32_main.cpp
+set Files=..\..\project\code\math_test.cpp
 set Libs=user32.lib
 set ObjDir=.\obj\
 
