@@ -3,47 +3,51 @@
 
 #include <math.h>
 
+//Strucutres
+//2D vector that can be acessed in as two distinct variables or an array
 typedef union VECTOR2D //Either access individual X & Y values or as an array that can be indexed through
 {
     struct
     {
-        float X, Y;
+        float32 X, Y;
     };
 
-    float Elements[1];
+    float32 Elements[2];
 
 } VECTOR2D;
 
-//Add two vectors
-inline VECTOR2D operator+(VECTOR2D A, VECTOR2D B)
+typedef VECTOR2D V2; //Shorthand
+typedef VECTOR2D POINT2D; //Represent a 2D point
+typedef VECTOR2D P2; //Shorthand for 2D points
+
+//3D vector that can be acessed in as three distinct variables or an array
+typedef union VECTOR3D //Either access individual X, Y & Z values or as an array that can be indexed through
 {
-    VECTOR2D Result;
+    struct
+    {
+        float32 X, Y, Z;
+    };
 
-    Result.X = A.X + B.X;
-    Result.Y = A.Y + B.Y;
+    float32 Elements[3];
 
-    return Result;
-}
+} VECTOR3D;
 
-//Subtract two vectors
-inline VECTOR2D operator-(VECTOR2D A, VECTOR2D B)
-{
-    VECTOR2D Result;
+typedef VECTOR3D V3; //Shorthand
+typedef VECTOR3D POINT3D; //Represent a 2D point
+typedef VECTOR3D P3; //Shorthand for 2D points
 
-    Result.X = A.X - B.X;
-    Result.Y = A.Y - B.Y;
+//Operator overloads:
+//Vector addition
+inline VECTOR2D operator+(VECTOR2D A, VECTOR2D B);
 
-    return Result;
-}
+//Vector subtraction
+inline VECTOR2D operator-(VECTOR2D A, VECTOR2D B);
 
+//Function prototypes
 //Find the length of a vector
-float vector_FindLength(VECTOR2D A)
-{
-    float Result;
+float32 vector_FindLengthSquare(VECTOR2D A);
 
-    Result = sqrt(A.X * A.X + A.Y * A.Y);
-
-    return Result;
-}
+//Find the length of a vector using square root
+float32 vector_FindLengthSquareRoot(VECTOR2D A);
 
 #endif
