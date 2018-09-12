@@ -11,7 +11,7 @@ pushd %BuildDir%
 
 :: Set compiler arguments
 set Files=..\..\project\code\math_test.cpp
-set Libs=user32.lib
+set Libs=
 set ObjDir=.\obj\
 
 :: Set compiler flags:
@@ -19,7 +19,7 @@ set ObjDir=.\obj\
 :: -Zi enable debugging info
 :: -FC use full path in diagnostics
 :: -Fo path to store Object files
-set CompilerFlags=-Zi -FC -Fo%ObjDir%
+set CompilerFlags=-Zi -FC -Fo%ObjDir% -DF_MEMORY_DEBUG
 
 :: Create Object directory if it doesn't exist
 if not exist %ObjDir% mkdir %ObjDir%

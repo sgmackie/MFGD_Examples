@@ -37,6 +37,7 @@ typedef VECTOR3D POINT3D; //Represent a 2D point
 typedef VECTOR3D P3; //Shorthand for 2D points
 
 //Operator overloads:
+//!Avoid writing overloads for things that are ambiguous! eg, "*" could be multiplaction or could be dot product; make functions for these instead
 //Vector addition
 inline VECTOR2D operator+(VECTOR2D A, VECTOR2D B);
 
@@ -44,10 +45,16 @@ inline VECTOR2D operator+(VECTOR2D A, VECTOR2D B);
 inline VECTOR2D operator-(VECTOR2D A, VECTOR2D B);
 
 //Function prototypes
-//Find the length of a vector
-float32 vector_FindLengthSquare(VECTOR2D A);
+//Multiply vector by a scalar (pass by address)
+void vector_Multiply(VECTOR2D &A, float32 Scalar);
 
-//Find the length of a vector using square root
-float32 vector_FindLengthSquareRoot(VECTOR2D A);
+//Divide vector by a scalar (pass by address)
+void vector_Divide(VECTOR2D &A, float32 Scalar);
+
+//Find the length of a vector
+float32 vector_Length(VECTOR2D A);
+
+//Find the length of a vector (must be used in comparison with another vector; this cancels the square root in the equation)
+float32 vector_LengthSquared(VECTOR2D A);
 
 #endif
