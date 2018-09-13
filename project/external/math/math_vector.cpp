@@ -57,3 +57,14 @@ float32 vector_LengthSquared(VECTOR2D A)
 
     return Result;
 }
+
+//Find the unit length of a vector by dividing the vector by it's own length
+VECTOR2D vector_UnitLength(VECTOR2D A)
+{
+    VECTOR2D Result = A;
+    float32 InputLength = vector_Length(A);
+
+    vector_Divide(Result, InputLength);
+
+    return Result;
+}

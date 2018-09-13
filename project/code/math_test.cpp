@@ -77,6 +77,13 @@ int main(int argc, char *argv[])
     printf("Speed Doubled: \t\t\tS= %f\n", SpeedDoubledLength);
     printf("Speed Halved: \t\t\tS= %f\n", SpeedHalvedLength);
 
+    //Finding unit length
+    VECTOR2D ToUnit1 = {5, 7};
+    VECTOR2D Unit1 = vector_UnitLength(ToUnit1);
+
+    printf("\n");
+    printf("Unit length: \t\t\tL= %f\n", vector_Length(Unit1));
+
     //Entity test
     ENTITY Box1;
     Box1.Position = {7, 2};

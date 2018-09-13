@@ -57,4 +57,7 @@ float32 vector_Length(VECTOR2D A);
 //Find the length of a vector (must be used in comparison with another vector; this cancels the square root in the equation)
 float32 vector_LengthSquared(VECTOR2D A);
 
+//Find the unit length of a vector by dividing the vector by it's own length
+VECTOR2D vector_UnitLength(VECTOR2D A);
+
 #endif
