@@ -62,9 +62,22 @@ float32 vector_LengthSquared(VECTOR2D A)
 VECTOR2D vector_UnitLength(VECTOR2D A)
 {
     VECTOR2D Result = A;
-    float32 InputLength = vector_Length(A);
 
+    float32 InputLength = vector_Length(A);
     vector_Divide(Result, InputLength);
+
+    return Result;
+}
+
+//Find the dot product of two vectors (converts them to unit length first)
+float32 vector_DotProduct(VECTOR2D &A, VECTOR2D &B)
+{
+    float32 Result;
+
+    A = vector_UnitLength(A);
+    B = vector_UnitLength(B);
+
+    Result = A.X * B.X + A.Y * B.Y;
 
     return Result;
 }

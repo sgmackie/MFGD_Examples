@@ -46,6 +46,15 @@ int main(int argc, char *argv[])
     printf("\n");
     printf("Length square root: \t\tL= %f\n", Test1Length);
 
+    //Find the dot product
+    VECTOR2D ToDot1 = {5, -1};
+    VECTOR2D ToDot2 = {-5, 1};
+
+    float32 DotProduct1 = vector_DotProduct(ToDot1, ToDot2);
+   
+    printf("\n");
+    printf("Dot product of two vectors : \tD= %f\n", DotProduct1);
+
     //Compare the length of two vectors
     POINT2D Pacman = {0, -1};
     POINT2D Inky = {1, 1};
